@@ -2056,7 +2056,7 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
 
     # ~~ Softwareupdate hook
     def get_update_information(self):
-        return dict(enclosure=dict(displayName="Konditionierungskammer", displayVersion=self._plugin_version,
+        return dict(enclosure=dict(displayName="Enclosure Plugin", displayVersion=self._plugin_version,
             # version check: github repository
             type="github_release", user="vitormhenrique", repo="OctoPrint-Enclosure", current=self._plugin_version,
             # update method: pip
@@ -2119,7 +2119,7 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
                     return
 
 
-__plugin_name__ = "Enclosure Plugin"
+__plugin_name__ = "Konditionierungskammer"
 __plugin_pythoncompat__ = ">=2.7,<4"
 
 
