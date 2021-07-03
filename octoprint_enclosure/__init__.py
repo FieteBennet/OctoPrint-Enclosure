@@ -2045,6 +2045,7 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
     # ~~ TemplatePlugin
     def get_template_configs(self):
         return [dict(type="settings", custom_bindings=True), dict(type="tab", custom_bindings=True),
+        return [dict(type="settings", custom_bindings=True), dict(type="tab", custom_bindings=True),
             dict(type="navbar", custom_bindings=True, suffix="_1", classes=["dropdown"]),
             dict(type="navbar", custom_bindings=True, template="enclosure_navbar_input.jinja2", suffix="_2",
                  classes=["dropdown"])]
