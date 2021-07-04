@@ -2,7 +2,7 @@ $(function () {
   function EnclosureViewModel(parameters) {
     var self = this;
 
-    self.pluginName = "enclosure";
+    self.pluginName = "Konditionierungskammer";
 
     self.settingsViewModel = parameters[0];
     self.connectionViewModel = parameters[1];
@@ -251,7 +251,7 @@ $(function () {
 
       if (data.is_msg) {
         new PNotify({
-          title: "Enclosure",
+          title: "Konditionierungskammer",
           text: data.msg,
           type: data.msg_type
         });
@@ -339,7 +339,7 @@ $(function () {
         var request = {set_temperature:newSetTemperature, index_id:item.index_id()};
 
         $.ajax({
-          url: self.buildPluginUrl("/setEnclosureTempHum"),
+          url: self.buildPluginUrl("/setKonditionierungskammerTempHum"),
           type: "GET",
           dataType: "json",
           data: request,
@@ -350,7 +350,7 @@ $(function () {
           },
           error: function (textStatus, errorThrown) {
             new PNotify({
-              title: "Enclosure",
+              title: "Konditionierungskammer",
               text: "Error setting temperature",
               type: "error"
             });
@@ -358,7 +358,7 @@ $(function () {
         });
       }else{
         new PNotify({
-          title: "Enclosure",
+          title: "Konditionierungskammer",
           text: "Invalid set temperature",
           type: "error"
         });
@@ -477,7 +477,7 @@ $(function () {
     self.turnOffHeater = function (item) {
       var request = { set_temperature: 0, index_id: item.index_id() };
       $.ajax({
-        url: self.buildPluginUrl("/setEnclosureTempHum"),
+        url: self.buildPluginUrl("/setKonditionierungskammerTempHum"),
         type: "GET",
         dataType: "json",
         data: request,
@@ -494,7 +494,7 @@ $(function () {
         dataType: "json",
         success: function (data) {
           new PNotify({
-            title: "Enclosure",
+            title: "Konditionierungskammer",
             text: "GPIO Mode cleared successfully",
             type: "success"
           });
@@ -610,7 +610,7 @@ $(function () {
       if (pwm_value < 0 || pwm_value > 100 || isNaN(pwm_value)) {
         item.new_duty_cycle("")
         new PNotify({
-          title: "Enclosure",
+          title: "Konditionierungskammer",
           text: "Duty Cycle value needs to be between 0 and 100!",
           type: "error"
         });
@@ -644,7 +644,7 @@ $(function () {
 
       if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255 || isNaN(r) || isNaN(g) || isNaN(b)) {
         new PNotify({
-          title: "Enclosure",
+          title: "Konditionierungskammer",
           text: "Color needs to follow the format rgb(value_red,value_green,value_blue)!",
           type: "error"
         });
@@ -679,7 +679,7 @@ $(function () {
       var b = parseInt(tempStr.substring(0, tempStr.indexOf(")")));
       if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255 || isNaN(r) || isNaN(g) || isNaN(b)) {
         new PNotify({
-          title: "Enclosure",
+          title: "Konditionierungskammer",
           text: "Color needs to follow the format rgb(value_red,value_green,value_blue)!",
           type: "error"
         });
@@ -714,7 +714,7 @@ $(function () {
     // ViewModels your plugin depends on, e.g. loginStateViewModel, settingsViewModel, ...
     dependencies: ["settingsViewModel", "connectionViewModel", "printerStateViewModel"],
     // Elements to bind to, e.g. #settings_plugin_tasmota-mqtt, #tab_plugin_tasmota-mqtt, ...
-    elements: ["#tab_plugin_enclosure", "#settings_plugin_enclosure", "#navbar_plugin_enclosure_1", "#navbar_plugin_enclosure_2"]
+    elements: ["#tab_plugin_Konditionierungskammer", "#settings_plugin_Konditionierungskammer", "#navbar_plugin_Konditionierungskammer_1", "#navbar_plugin_Konditionierungskammer_2"]
   });
 
 });

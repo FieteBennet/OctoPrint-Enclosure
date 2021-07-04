@@ -2056,12 +2056,12 @@ class EnclosurePlugin(octoprint.plugin.StartupPlugin, octoprint.plugin.TemplateP
             css=["css/bootstrap-colorpicker.css", "css/enclosure.css"])
 
     # ~~ Softwareupdate hook
-    def get_update_information(self):
-        return dict(enclosure=dict(displayName="Enclosure Plugin", displayVersion=self._plugin_version,
-            # version check: github repository
-            type="github_release", user="vitormhenrique", repo="OctoPrint-Enclosure", current=self._plugin_version,
-            # update method: pip
-            pip="https://github.com/vitormhenrique/OctoPrint-Enclosure/archive/{target_version}.zip"))
+    # def get_update_information(self):
+    #    return dict(enclosure=dict(displayName="Enclosure Plugin", displayVersion=self._plugin_version,
+    #        # version check: github repository
+    #        type="github_release", user="vitormhenrique", repo="OctoPrint-Enclosure", current=self._plugin_version,
+    #        # update method: pip
+    #        pip="https://github.com/vitormhenrique/OctoPrint-Enclosure/archive/{target_version}.zip"))
 
     def hook_gcode_queuing(self, comm_instance, phase, cmd, cmd_type, gcode, *args, **kwargs):
         if self._settings.get(["gcode_control"]) is False:
